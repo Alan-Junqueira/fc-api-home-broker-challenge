@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  app:
-    build: .
-    ports:
-      - 3000:3000
-      - 5555:5555
-    volumes:
-      - .:/home/node/app
-    extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+  # app:
+  #   build: .
+  #   ports:
+  #     - 3000:3000
+  #     - 5555:5555
+  #   volumes:
+  #     - .:/home/node/app
+  #   extra_hosts:
+  #     - "host.docker.internal:172.17.0.1"
       # não use docker desktop (linux) ou (windows)
   
   db:
@@ -26,9 +26,9 @@ volumes:
   mongodb_data:
     driver: local
 
-networks:
-  my-network:
-    external: true
+# networks:
+#   my-network:
+#     external: true
 # //Linux ou Mac
 # /etc/hosts
 
