@@ -1,2 +1,25 @@
 ###
 GET http://localhost:3000/api/assets
+
+###
+POST http://localhost:3000/api/assets
+Content-Type: application/json
+
+{
+  "id": "asset1",
+  "symbol" : "PTR4"
+}
+
+###
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+  "price": 100,
+  "asset_id" : "asset1",
+  "status": "PENDING"
+}
+
+###
+GET http://localhost:3000/api/orders
+
