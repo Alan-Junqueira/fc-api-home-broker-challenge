@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AssetsService } from './assets.service';
 
-@Controller('assets')
+@Controller('api/assets')
 export class AssetsController {
   constructor(private readonly assetsService: AssetsService) { }
 

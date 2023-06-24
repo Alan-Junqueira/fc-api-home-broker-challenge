@@ -1,8 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { OrdersService } from './orders.service';
-import { ORDER_STATUS } from '@prisma/client';
 
-@Controller('orders')
+@Controller('api/orders')
 export class OrdersController {
   constructor(private readonly ordersService: OrdersService) { }
 
@@ -14,7 +13,7 @@ export class OrdersController {
   @Post()
   create(@Body() body: {
     price: number
-    status: ORDER_STATUS
+    status: "PENDING" | "OPEN" | "CLOSED"
     asset_id: string
   }) {
     return this.ordersService.create(body)

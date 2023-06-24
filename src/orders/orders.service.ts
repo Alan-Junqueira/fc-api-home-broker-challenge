@@ -1,16 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { Prisma } from '@prisma/client';
-import { PrismaService } from 'src/prisma/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma/prisma.service'
 
 @Injectable()
 export class OrdersService {
   constructor(private prismaService: PrismaService) { }
 
-  all(){
+  all() {
     return this.prismaService.order.findMany()
   }
 
-  create(data: Prisma.OrderUncheckedCreateInput) {
+  create(data: {
+    price: number
+    status: "PENDING" | "OPEN" | "CLOSED"
+    asset_id: string
+  }) {
     return this.prismaService.order.create({
       data
     })

@@ -6,8 +6,12 @@ import { AssetsModule } from './assets/assets.module';
 import { OrdersModule } from './orders/orders.module';
 
 @Module({
-  imports: [PrismaModule, AssetsModule, OrdersModule],
+  imports: [
+    PrismaModule,
+    AssetsModule,
+    OrdersModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
